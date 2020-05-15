@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" *ngIf="!isLogin" href="/home">STORAGE</a>
+  <div *ngIf="isLogin" class="row">
+    <a class="nav-item  ml-3 nav-link active btn text-light fa fa-home" routerLink="/image/list"> Inicio </a>
+    <a class="nav-item  ml-3 nav-link active btn text-light fa fa-upload" routerLink="/image/upload"> Subir
+      Archivo</a>
+    <a class="nav-item  ml-3 nav-link active btn text-light fa fa-upload" routerLink="/image/qrcode-reader"> Scnaer
+      QR</a>
+    <a class="nav-item  ml-3 nav-link active btn text-light fa fa-upload" routerLink="/image/barcode-reader"> Scnaer
+      Codigo de barras</a>
+  </div>
+  <ul class="navbar-nav navbar-right" *ngIf="!isLogin">
+    <div class="row">
+      <li class="nav-item  ml-3">
+        <a class=" btn text-light fa fa-user" routerLink="/login"> Iniciar sesion</a>
+      </li>
+      <li class="nav-item  ml-3" *ngIf="!isLogin">
+        <a class=" btn text-light fa fa-address-book" routerLink="/register"> Registrarse</a>
+      </li>
+    </div>
+  </ul>
+  <ul class="navbar-nav navbar-right" *ngIf="isLogin">
+    <div>
+      <div class="row">
+        <ul *ngIf="user$ | async as user; isLogin">
+          <a> Bienvenid(@): {{ user?.email }}</a>
+          <a href="#" class="btn text-light fa fa-window-close-o nav-item  ml-3" (click)="onLogout()">Cerrar
+            Sesion</a>
+        </ul>
+      </div>
+    </div>
+  </ul>
+</nav>

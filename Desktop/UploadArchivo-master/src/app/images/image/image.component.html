@@ -1,0 +1,38 @@
+<div class="card" style="width:25rem">
+  <div class="card-body">
+    <form [formGroup]="formTemplate" (submit)="onSubmit()">
+      <div class="text-center">
+        <img [src]="imgSrc" width="280px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div class="form-group">
+        <input type="file" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+        <div class="btn btn-outline-success btn" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">Campo requerido.
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" formControlName="caption" placeholder="Descripcion">
+        <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">Campo requerido.
+        </div>
+      </div>
+      <div class="form-group">
+        <select formControlName="category" class="form-control">
+          <option value="Documento" selected>Documento</option>
+          <option value="video">video</option>
+          <option value="Imagen">Imagen</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <a routerLink="/image/list" class="btn btn-outline-success btn">Ir storage</a>
+        </div>
+
+
+        <div class="form-group col-md-6">
+          <button type="submit" class="btn btn-outline-success ">Subir Archivo</button>
+        </div>
+
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div *ngIf="rol == 2">
+
+  <div class="container space">
+    <a routerLink="/image/upload" class="btn btn-outline-success btn-sm">Regresar</a>
+    <div class="row">
+      <div class="col-sm">
+        <br>
+        <div class="card-columns">
+          <div class="card" *ngFor="let item of imageList">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Categoria :</strong> {{item.category}}</h5>
+              <h5 class="card-title"><strong>Descripcion :</strong> {{item.caption}}</h5>
+              <h5 class="card-title"><strong>Usuario :</strong> {{item.user}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <a routerLink="/image/detail/{{item.id}}" class="btn btn-outline-success btn-sm">Previsualizar</a>
+              <div *ngIf="item.category == 'imagen'">
+                <div class="card mb-3">
+                  <img src="{{imageList.imageUrl}}" width="640" height="480">
+                </div>
+              </div>
+              <td>
+                <br>
+                <div *ngIf="item.user == user">
+                  <a routerLink="/image/edit/{{item.id}}" class="btn btn-outline-success btn-sm">Editar</a>
+                  <Button (click)="deleteElement(item.id)" class="btn btn-outline-success btn-sm"> Eliminar</Button>
+                </div>
+                <div *ngIf="item.user != user">
+                  <Button disabled class="btn btn-outline-success btn-sm">Editar</Button>
+                  <Button disabled class="btn btn-outline-success btn-sm"> Eliminar</Button>
+                </div>
+              </td>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="rol == 1">
+  <div class="container space">
+    <a routerLink="/image/upload" class="btn btn-outline-success btn-sm">Regresar</a>
+    <div class="row">
+      <div class="col-sm">
+        <br>
+        <div class="card-columns">
+          <div class="card" *ngFor="let item of imageList">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Categoria :</strong> {{item.category}}</h5>
+              <h5 class="card-title"><strong>Descripcion :</strong> {{item.caption}}</h5>
+              <h5 class="card-title"><strong>Usuario :</strong> {{item.user}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <a routerLink="/image/detail/{{item.id}}" class="btn btn-outline-success btn-sm">Previsualizar</a>
+              <td>
+                <br>
+                <div *ngIf="item.user == user">
+                  <Button (click)="deleteElement(item.id)" class="btn btn-outline-success btn-sm"> Eliminar</Button>
+                </div>
+                <div *ngIf="item.user != user">
+                  <Button (click)="deleteElement(item.id)" class="btn btn-outline-success btn-sm"> Eliminar</Button>
+                </div>
+              </td>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

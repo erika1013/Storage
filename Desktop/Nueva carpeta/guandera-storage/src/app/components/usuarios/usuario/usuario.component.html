@@ -1,0 +1,52 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #usuarioForm="ngForm" (ngSubmit)="onSubmit(usuarioForm)">
+          <!-- TO UPDATE -->
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="usuarioService.selectedUsuario.$key">
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="name"
+              #name="ngModel"
+              [(ngModel)]="usuarioService.selectedUsuario.name"
+              placeholder="Titulo
+              "
+              >
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="coment"
+              #name="ngModel"
+              [(ngModel)]="usuarioService.selectedUsuario.coment"
+              placeholder="Descripcion"
+              >
+          </div>
+
+          <div class="form-group">
+            <h5>Seleccionar archivo</h5>
+            <input type="file"  accept=".png, .jpg, .rar, .mp3, .xlsx, .docx, .pdf" (change)="upload($event)"  />
+          </div>
+       
+
+
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) +'%'"> 
+            </div> 
+          </div> 
+          <br>
+          <input type="text"[value]="urlfile | async">
+
+          <input type="hidden" [value]="urlfile | async">
+          <button *ngIf="urlfile | async; else btnDisabled" type="submit" class="btn btn-lg btn-primary btn-block">Guardae</button>
+          <ng-template #btnDisabled>
+             <button type="submit" disabled=true class="btn btn-lg btn-secondary btn-block">Guardar</button>
+          </ng-template>
+          
+        </form>
+  </div>
+</div>

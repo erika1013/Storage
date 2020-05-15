@@ -1,0 +1,33 @@
+<div *ngIf="imageList.category === 'video'" width="800" height="800">
+  <div class="card" style="width: 40rem;">
+    <video src="{{imageList.imageUrl}}" controls autoplay muted loop width="640" height="480"></video>
+    <div class="card-body">
+      <h1 class="card-title">{{imageList.caption}}</h1>
+      <a routerLink="/image/list" class="btn btn-outline-success btn-sm">Regresar</a>>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="imageList.category === 'Imagen'" width="640" height="480">
+  <div class="card" style="width: 40rem;">
+    <img src="{{imageList.imageUrl}}" controls autoplay muted loop width="640" height="480">
+    <div class="card-body">
+      <h1 class="card-title">{{imageList.caption}}</h1>
+      <a routerLink="/image/list" class="btn btn-outline-success btn-sm">Regresar</a>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="imageList.category === 'Documento'" width="640" height="480">
+  <div class="card" style="width: 40rem;">
+    <iframe src="https://docs.google.com/viewer?url=http:https://firebasestorage.googleapis.com/v0/b/pruebaenangular-85fb8.appspot.com/o/Documento%2FDialnet-MusicaYSignificado-4251964_1588943801395?alt=media&token=679872ca-d616-4688-b146-69c85ae215ef;sequence=1&embedded=true" 
+     width="600" height="780" style="border: none;"></iframe>
+    <div class="card-body">
+      <h1 class="card-title">{{imageList.caption}}</h1>
+      <a routerLink="/image/list" class="bi bi-arrow-left" width="1em" height="1em" viewBox="0 0 16 16"
+        fill="currentColor">Regresar</a>
+    </div>
+  </div>
+</div>
+

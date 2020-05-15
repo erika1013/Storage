@@ -1,0 +1,81 @@
+Modelo app
+app/
+|- auth/
+    |- forgot-password/
+		|- forgot-password-routing.module.ts
+		|- forgot-password.component.html
+		|- forgot-password.component.scss
+		|- forgot-password.component.spec.ts
+		|- forgot-password.component.ts
+    |- login/
+		|- login-routing.module.ts
+		|- login.component.html
+		|- login.component.scss
+		|- login.component.spec.ts
+		|- login.component.ts
+		
+    |- register/
+		|- register-routing.module.ts
+		|- register.component.html
+		|- register.component.scss
+		|- register.component.spec.ts
+		|- register.component.ts
+    |- sent-email/
+		|- sent-email-routing.module.ts
+		|- sent-email.component.html
+		|- sent-email.component.scss
+		|- sent-email.component.spec.ts
+		|- sent-email.component.ts
+	|- servicios/
+		|- auth.service.spec.ts
+		|- auth.service.ts
+|- home/
+	|- home-routing.module.ts
+	|- home.component.html
+	|- home.component.scss
+	|- home.component.spec.ts
+	|- home.component.ts
+   
+|- images/
+   |- image/
+      |- image.component.html
+	  |- image.component.sass
+	  |- image.component.spec.ts
+	  |- image.component.ts
+	  
+   |- image-list/
+      |- image-list.component.html
+	  |- image-list.component.sass
+	  |- image-list.component.spec.ts
+	  |- image-list.component.ts
+   |- image-edit/
+      |- image-edit.component.html
+	  |- image-edit.component.sass
+	  |- image-edit.component.spec.ts
+	  |- image-edit.component.ts
+	  
+	|-service
+	  |- image.service.spec.ts
+	  |- image.service.ts
+		
+	|- images.component.html
+    |- images.component.sass
+	|- images.component.spec.ts
+	|- images.component.ts
+	
+|-navbar
+	|- navbar.component.html
+	|- navbar.component.scss
+	|- navbar.component.spec.ts
+	|- navbar.component.ts
+|-shared/
+	|-models
+		|- image.interface.ts
+		|- user.interface.ts
+		
+		
+|- app-routing.module.ts
+|- app.component.html
+|- app.component.scss
+|- app.component.spec.ts
+|- app.component.ts

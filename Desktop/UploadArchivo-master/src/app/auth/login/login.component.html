@@ -1,0 +1,43 @@
+<div class="w3-row">
+  <div class="w3-half w3-container">
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img src="https://www.guandera.com/resources/img/logotipo-guandera.svg" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <div class="form">
+          <div class="card-body">
+            <h1 class="text-center"></h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+              <div class="form-group">
+                <label for="email" class="fadeIn second" placeholder="Ingresa tu Email"></label>
+                <input type="email" class="form-control" placeholder="Ingresa tu Email" formControlName="email" />
+              </div>
+              <div class="form-group">
+                <label for="password" class="fadeIn third" placeholder="Ingresa tu Contraseña"></label>
+                <input type="password" class="form-control" placeholder="Ingresa tu Contraseña"
+                  formControlName="password" />
+              </div>
+              <button class="btn btn-primary btn-lg btn-block">
+                Login
+              </button>
+            </form>
+            <div class="form-group mt-3">
+              <p>
+                Crear una cuenta? <a [routerLink]="['/register']"> Registro </a>
+              </p>
+            </div>
+            <div class="form-group mt-3">
+              <p>
+                <a [routerLink]="['/forgot-password']"> Olvidaste tu contraseña ? </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

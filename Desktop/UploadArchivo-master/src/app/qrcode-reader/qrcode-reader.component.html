@@ -1,0 +1,14 @@
+
+
+<zxing-scanner (scanSuccess)="onCodeResult($event)" ></zxing-scanner>
+<a routerLink="/image/list" class="btn btn-outline-success btn-sm">Regresar</a>
+
+
+<section class="results" *ngIf="qrResultString">
+  <div>
+    <small>Result</small>
+    <strong>{{ qrResultString }}</strong>
+    <button mat-icon-button (click)="clearResult()">&times;</button>
+  </div>
+
+</section>
